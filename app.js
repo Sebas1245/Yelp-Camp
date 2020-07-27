@@ -10,6 +10,7 @@ var User = require("./models/user");
 var seedDB = require("./seeds")
 var commentRoutes = require("./routes/comments");
 var methodOverride = require("method-override");
+var port = process.env.PORT || 3000
 
 // requiring routes
 var commentRoutes       = require("./routes/comments"),
@@ -58,7 +59,7 @@ app.use("/",indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
-app.listen(3000, function(){
+app.listen(port, process.env.IP, () => {
     console.log("The YelpCamp Server has started.");
 })
 
